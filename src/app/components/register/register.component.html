@@ -1,0 +1,38 @@
+<form [formGroup]="registerForm">
+    <p-card header="Register" [style]="{width: '360px'}">
+        <div class="field">
+            <label for="fullname">Full Name</label>   
+            <input type="text" pInputText formControlName="fullname" class="w-full" name="fullname" placeholder="Enter Your fullname"/>
+            <small *ngIf=" fullname.invalid && (fullname.dirty || fullname.touched)" class="block p-error">
+               <div *ngIf="fullname.errors?.['required']">Name is required.</div>
+               <div *ngIf="fullname.errors?.['pattern']">Enter a valid name.</div>
+            </small><br>
+
+            <label for="email">Email</label>   
+            <input type="text" pInputText formControlName="email" class="w-full" name="email" placeholder="Enter Your Email"/>
+            <small *ngIf=" email.invalid && (email.dirty || email.touched)" class="block p-error">
+               <div *ngIf="email.errors?.['required']">Email is required.</div>
+               <div *ngIf="email.errors?.['email']">Email should be valid.</div>
+            </small><br>
+
+            <label for="password">Password</label>   
+            <input type="password" pInputText formControlName="password" class="w-full" name="password" placeholder="Enter Your password"/>
+            <small *ngIf=" password.invalid && (password.dirty || password.touched)" class="block p-error">
+                <div *ngIf="password.errors?.['required']">Password is required.</div>
+             </small><br>
+
+            <label for="confirmPassword">Confirm Password</label>   
+            <input type="confirmPassword" pInputText formControlName="confirmPassword" class="w-full" name="confirmPassword" placeholder="Enter Your password"/>
+            <small *ngIf=" confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)" class="block p-error">
+                <div *ngIf="confirmPassword.errors?.['required']">Confirm the Password</div>
+             </small>
+             <small *ngIf="registerForm.errors?.['passwordMismatch'] && confirmPassword.valid && password.valid" class="block p-error">
+                Passwordshould match.
+             </small><br>
+        </div>    
+    <p-button label="SIGN IN" styleClass="w-full" [disabled]="registerForm.invalid"></p-button>
+    <div class="mt-2">
+        Already a member?<a routerLink="/Login">Login</a>
+    </div>
+    </p-card>
+</form>
