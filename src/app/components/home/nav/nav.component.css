@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 20px;
+}
+.nav-bar{
+    margin: 15px 0px;
+}
+ul{
+    list-style-type: none;
+    margin: auto;
+    overflow: hidden;
+    background-color: #efefef;
+    width: 100%;
+}
+li{
+    float: left;
+}
+li a{
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 86px;
+    text-decoration: none;
+}
+li a:hover{
+    background-color: #bbb;
+}

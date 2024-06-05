@@ -1,0 +1,55 @@
+<form [formGroup]="personalDetails" class="mt-5">
+    <p-card header="Personal Details" [style]="{width: '720px'}">
+        <div>
+            <div class="card flex p-3">
+                <span class="p-float-label mx-6">
+                    <input pInputText id="firstname" formControlName="firstname" />
+                    <label htmlFor="firstname">Firstname</label>
+                </span>
+                <span class="p-float-label">
+                    <input pInputText id="lastname" formControlName="lastname" />
+                    <label htmlFor="lastname">Lastname</label>
+                </span>
+            </div>
+            <div class="card flex p-3 mx-6">
+                <div>
+                    <p-calendar placeholder="DOB" formControlName="date" [touchUI]="true"></p-calendar>
+                </div>
+                <div class="field-checkbox mx-6">
+                    <label for="" >Gender:  </label> 
+                    <p-radioButton formControlName="gender" value="male"></p-radioButton>
+                    <label>Male</label>
+                    <p-radioButton formControlName="gender" value="female"></p-radioButton>
+                    <label> Female</label>
+                </div>
+            </div>
+            <div class="card flex mx-6">
+                <label for="" class="p-3">Work: </label>
+                <p-checkbox formControlName="work" value="Part Time" inputId="pt"></p-checkbox>
+                <label for="pt" class="p-3">Part Time</label>
+                <p-checkbox formControlName="work" value="Full Time" inputId="ft"></p-checkbox>
+                <label for="ft" class="p-3">Full Time</label>
+                <p-checkbox formControlName="work" value="Seasonal" inputId="ss"></p-checkbox>
+                <label for="ss" class="p-3">Seasonal</label>
+            </div>
+            <div class="card flex mx-7">
+                <p-dropdown formControlName="city" [options]="cities" optionLabel="name" placeholder="Select Your Country"></p-dropdown>
+                <div class="p-float-label mx-8">
+                    <label for="">Phone No: </label>
+                    <input pInputText pKeyFilter="int" />
+                </div>
+            </div>
+
+
+
+            <div class="card flex p-4 mx-6">
+                <p-inputSwitch formControlName="checked"></p-inputSwitch>
+                <label class="mx-3">Save Changes</label>
+            </div>
+            <div class="card flex justify-content-center">
+                <p-button label="Submit" icon="pi pi-check" iconPos="right"></p-button>
+                <p-button label="Refresh" icon="pi pi-refresh" iconPos="right" class="mx-4"></p-button>
+            </div>
+        </div>
+    </p-card>
+</form>

@@ -1,6 +1,7 @@
 <form [formGroup]="registerForm">
     <p-card header="Register" [style]="{width: '360px'}">
         <div class="field">
+            
             <label for="fullname">Full Name</label>   
             <input type="text" pInputText formControlName="fullname" class="w-full" name="fullname" placeholder="Enter Your fullname"/>
             <small *ngIf=" fullname.invalid && (fullname.dirty || fullname.touched)" class="block p-error">

@@ -9,9 +9,17 @@ import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { AccordionModule } from 'primeng/accordion';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { NavComponent } from './components/home/nav/nav.component';
+import { PersonalDComponent } from './components/personal-d/personal-d.component';
+import { CalendarModule } from 'primeng/calendar';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { CheckboxModule } from 'primeng/checkbox';
+import { DropdownModule } from 'primeng/dropdown';
+
 
 
 @NgModule({
@@ -19,7 +27,9 @@ import { AccordionModule } from 'primeng/accordion';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    NavComponent,
+    PersonalDComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +39,13 @@ import { AccordionModule } from 'primeng/accordion';
     ReactiveFormsModule,
     ButtonModule,
     AccordionModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    InputSwitchModule,
+    FormsModule,
+    CalendarModule,
+    RadioButtonModule,
+    CheckboxModule,
+    DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
